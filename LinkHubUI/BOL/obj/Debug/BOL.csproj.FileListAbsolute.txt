@@ -1,0 +1,11 @@
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\bin\Debug\BOL.dll
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\bin\Debug\BOL.pdb
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\obj\Debug\BOL.csproj.CoreCompileInputs.cache
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\obj\Debug\BOL.dll
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\obj\Debug\BOL.pdb
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\bin\Debug\BOL.dll.config
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\bin\Debug\EntityFramework.dll
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\bin\Debug\EntityFramework.xml
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BOL\bin\Debug\EntityFramework.SqlServer.xml
