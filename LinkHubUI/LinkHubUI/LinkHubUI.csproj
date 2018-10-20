@@ -127,6 +127,7 @@
     <Content Include="Areas\Security\Views\Register\Index.cshtml" />
     <Content Include="Areas\Common\Views\BrowseURL\Index.cshtml" />
     <Content Include="Areas\Common\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Common\Views\User\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -151,6 +152,7 @@
     <Compile Include="Areas\Common\Controllers\BrowseURLController.cs" />
     <Compile Include="Areas\Common\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Common\Controllers\UserController.cs" />
     <Compile Include="Areas\Security\Controllers\LoginController.cs" />
     <Compile Include="Areas\Security\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
