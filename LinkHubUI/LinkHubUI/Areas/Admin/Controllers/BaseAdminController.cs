@@ -7,12 +7,12 @@ using System.Web.Mvc;
 
 namespace LinkHubUI.Areas.Admin.Controllers
 {
-    public class ListUserController : BaseAdminController
+    public class BaseAdminController : Controller
     {
-        // GET: Admin/ListUser
-        public ActionResult Index()
+        protected AdminBs adminBs;
+        public BaseAdminController()
         {
-            return View();
+            adminBs = new AdminBs();
         }
     }
 }

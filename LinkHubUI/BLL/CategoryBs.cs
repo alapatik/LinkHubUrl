@@ -19,5 +19,13 @@ namespace BLL
         {
             return categoryDb.GetAll();
         }
+        public void DeleteById(int id)
+        {
+            categoryDb.Delete(id);
+        }
+        public void Insert(tbl_Category category)
+        {
+            categoryDb.Insert(category);
+        }
     }
 }

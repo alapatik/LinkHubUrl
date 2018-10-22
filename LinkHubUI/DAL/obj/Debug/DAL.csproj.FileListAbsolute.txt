@@ -7,4 +7,3 @@ D:\Practice\MVC\LInkHubUI\LinkHubUI\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.c
 D:\Practice\MVC\LInkHubUI\LinkHubUI\DAL\obj\Debug\DAL.dll
 D:\Practice\MVC\LInkHubUI\LinkHubUI\DAL\obj\Debug\DAL.pdb
 D:\Practice\MVC\LInkHubUI\LinkHubUI\DAL\bin\Debug\BOL.dll.config
-D:\Practice\MVC\LInkHubUI\LinkHubUI\DAL\bin\Debug\EntityFramework.xml

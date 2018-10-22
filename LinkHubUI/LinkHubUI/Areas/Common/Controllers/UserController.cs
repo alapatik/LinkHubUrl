@@ -8,13 +8,8 @@ using System.Web.Mvc;
 
 namespace LinkHubUI.Areas.Common.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseCommonController
     {
-        UserBs user;
-        public UserController()
-        {
-            user = new UserBs();
-        }
         // GET: Common/User
         public ActionResult Index(string SortBy, string SortOrder, int PageNumber = 0)
         {
@@ -28,7 +23,7 @@ namespace LinkHubUI.Areas.Common.Controllers
         }
         private IEnumerable<tbl_User> GetUsers(string SortBy, string SortOrder)
         {
-            var result = user.GetAll();
+            var result = commonBs.userBs.GetAll();
             switch (SortBy)
             {
                 case "UserId":

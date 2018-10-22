@@ -7,12 +7,12 @@ using System.Web.Mvc;
 
 namespace LinkHubUI.Areas.Common.Controllers
 {
-    public class HomeController : BaseCommonController
+    public class BaseCommonController : Controller
     {
-        // GET: Common/Home
-        public ActionResult Index()
+        protected CommonBs commonBs;
+        public BaseCommonController()
         {
-            return View();
+            commonBs = new CommonBs();
         }
     }
 }

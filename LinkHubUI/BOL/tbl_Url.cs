@@ -11,7 +11,8 @@ namespace BOL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_Url
     {
         public int UrlId { get; set; }

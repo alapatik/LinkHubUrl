@@ -1,7 +1,81 @@
-﻿
+﻿@model IEnumerable<BOL.tbl_Category>
+
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<script>
+    function ConfirmDelete() {
+        return confirm("Are you sure you want to delete?");
+    }
+</script>
+<h2>Categories</h2>
+@{
+    if (TempData["Msg"] != null)
+    {
+        <p>@TempData["Msg"]</p>
+    }
+}
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CategoryId)*@
+            @Html.ActionLink("Category ID", "Index", new
+            {
+                SortBy = "CategoryId"
+                          ,
+                SortOrder = ViewBag.SortOrder == "ASC" ? "DESC" : "ASC"
+                          ,
+                PageNumber = ViewBag.CurrentPage
+            })
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CategoryName)*@
+            @Html.ActionLink("Category Name", "Index", new
+            {
+                SortBy = "CategoryName"
+                       ,
+                SortOrder = ViewBag.SortOrder == "ASC" ? "DESC" : "ASC"
+                       ,
+                PageNumber = ViewBag.CurrentPage
+            })
+        </th>
+        <th>Delete</th>
+    </tr>
 
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { ViewBag.SortBy, ViewBag.SortOrder, ViewBag.CurrentPage, item.CategoryId }, new { onclick = "return ConfirmDelete()" })
+            </td>
+        </tr>
+    }
+</table>
+@for (int i = 0; i < ViewBag.PageCount; i++)
+{
+    if (i + 1 == ViewBag.CurrentPage)
+    {
+        <u>@Html.ActionLink((i + 1).ToString() + " ", "Index", new { SortBy = ViewBag.SortBy, SortOrder = ViewBag.SortOrder, PageNumber = (i + 1).ToString() })</u>
+    }
+    else
+    {
+        @Html.ActionLink((i + 1).ToString() + " ", "Index", new { SortBy = ViewBag.SortBy, SortOrder = ViewBag.SortOrder, PageNumber = (i + 1).ToString() })
+    }
+}
+        <br />
+<br/>
+<div class="form-group">
+    <div class="col-md-5">
+        @Html.ActionLink("Create", "Index", "Category", null, htmlAttributes: new { @class = "btn btn-default" })
+        @*<input type="submit" value="Create" class="btn btn-default" />*@
+    </div>
+</div>
+<br />

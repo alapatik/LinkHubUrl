@@ -19,5 +19,9 @@ namespace BLL
         {
             return db.GetAll();
         }
+        public void Insert(tbl_Url url)
+        {
+            db.Insert(url);
+        }
     }
 }

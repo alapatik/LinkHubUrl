@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using BOL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,12 +8,32 @@ using System.Web.Mvc;
 
 namespace LinkHubUI.Areas.Admin.Controllers
 {
-    public class CategoryController : Controller
+    public class CategoryController : BaseAdminController
     {
-        // GET: Admin/Category
+        
         public ActionResult Index()
         {
             return View();
+        }
+        public ActionResult Create(tbl_Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    adminBs.categoryBs.Insert(category);
+                    TempData["Msg"] = "Created successfully";
+                }
+                catch (Exception ex)
+                {
+                    TempData["Msg"] = "Create failed. " + ex.Message;
+                }
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Index");
+            }
         }
     }
 }
