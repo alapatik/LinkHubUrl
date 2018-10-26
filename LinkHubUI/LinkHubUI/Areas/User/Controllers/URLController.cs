@@ -27,6 +27,9 @@ namespace LinkHubUI.Areas.User.Controllers
         {
             ViewBag.CategoryId = new SelectList(db.tbl_Category, "CategoryId", "CategoryName");
             ViewBag.UserId = new SelectList(db.tbl_User, "UserId", "UserEmail");
+            myUrl.IsApproved = "P";
+            myUrl.UserId = userAreaBs.userBs.GetAll().Where(u => u.UserEmail == User.Identity.Name).FirstOrDefault().UserId;
+
             if (ModelState.IsValid)
             {
                 try

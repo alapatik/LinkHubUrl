@@ -36,6 +36,7 @@ namespace DAL
         public void Update(tbl_Url url)
         {
             db.Entry(url).State = System.Data.Entity.EntityState.Modified;
+            SaveChanges();
         }
         public void SaveChanges()
         {

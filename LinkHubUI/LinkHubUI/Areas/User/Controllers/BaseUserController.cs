@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace LinkHubUI.Areas.User.Controllers
 {
+    [AllowAnonymous]
     public class BaseUserController : Controller
     {
         protected UserAreaBs userAreaBs;

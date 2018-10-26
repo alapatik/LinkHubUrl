@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace LinkHubUI.Areas.Seurity
+namespace LinkHubUI.Areas.Security
 {
     public class SecurityAreaRegistration : AreaRegistration 
     {

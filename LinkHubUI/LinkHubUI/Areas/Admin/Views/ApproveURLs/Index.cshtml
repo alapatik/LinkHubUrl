@@ -1,7 +1,94 @@
-﻿
+﻿@model IEnumerable<BOL.tbl_Url>
+
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<script>
+    function onChangeStatus() {
+        return confirm("Are you sure?");
+    }
+    
+</script>
+<h2>Manage URLs</h2>
 
+<p>
+    @Html.ActionLink("All Urlss", "Index", new { FilterBy = "", PageNumber = ViewBag.PageNumber }) |
+    @Html.ActionLink("Pending Urlss", "Index", new { FilterBy = "p", PageNumber = ViewBag.PageNumber }) |
+    @Html.ActionLink("Approved Urlss", "Index", new { FilterBy = "a", PageNumber = ViewBag.PageNumber }) |
+    @Html.ActionLink("Rejected Urlss", "Index", new { FilterBy = "r", PageNumber = ViewBag.PageNumber })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_User.UserEmail)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Approve", "ChangeUrlStatus"
+                    , new { id = item.UrlId, status = "A", filterBy = ViewBag.FilterBy, pageNumber = ViewBag.PageNumber }
+                    , new { onclick = "return onChangeStatus()" }) |
+                @Html.ActionLink("Reject", "ChangeUrlStatus"
+                    , new { id = item.UrlId, status = "P", filterBy = ViewBag.FilterBy, pageNumber = ViewBag.PageNumber }
+                    , new { onclick = "return onChangeStatus()" })
+            </td>
+            <td>
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsApproved)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbl_Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbl_User.UserEmail)
+            </td>
+        </tr>
+    }
+</table>
+@{
+    for (int i = 1; i <+ ViewBag.PageCount; i++)
+    {
+        if (i  == ViewBag.PageNumber)
+        {
+            <u>
+                @Html.ActionLink(i.ToString() + " ", "Index", new { FilterBy = ViewBag.FilterBy, PageNumber = i })
+            </u>
+        }
+        else
+        {
+            @Html.ActionLink(i.ToString() + " ", "Index", new { FilterBy = ViewBag.FilterBy, PageNumber = i })
+        }
+    }    
+}

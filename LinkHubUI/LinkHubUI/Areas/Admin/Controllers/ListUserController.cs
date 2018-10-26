@@ -7,12 +7,14 @@ using System.Web.Mvc;
 
 namespace LinkHubUI.Areas.Admin.Controllers
 {
+    [Authorize(Roles ="A")]
     public class ListUserController : BaseAdminController
     {
         // GET: Admin/ListUser
         public ActionResult Index()
         {
-            return View();
+            var users = adminBs.userBs.GetAll();
+            return View(users);
         }
     }
 }

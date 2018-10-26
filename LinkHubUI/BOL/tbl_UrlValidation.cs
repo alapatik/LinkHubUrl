@@ -23,7 +23,7 @@ namespace BOL
     {
         [Required]
         [Url]
-        [UniqueUrl]
+        //[UniqueUrl]
         public string Url { get; set; }
         [Required]
         public string UrlTitle { get; set; }

@@ -23,5 +23,9 @@ namespace BLL
         {
             db.Insert(url);
         }
+        public void Update(tbl_Url url)
+        {
+            db.Update(url);
+        }
     }
 }
