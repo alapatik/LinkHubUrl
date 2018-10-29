@@ -7,8 +7,8 @@
 
 <h2>URLs</h2>
 
-<table class="table">
-    <tr>
+<table class="table table-striped table-bordered table-hover">
+    <tr class="info">
         <th>
             @*@Html.ActionLink("Title", "Index", new { SortOrder = "ASC", SortBy = "Title" })*@
             @Html.ActionLink("Title", "Index", "BrowseURL"
@@ -67,17 +67,23 @@
             </td>
         </tr>
     }
-
 </table>
-@for (int i = 0; i < ViewBag.PageCount; i++)
-{
-    if (i + 1 == ViewBag.PageNumber)
-    {
-<u>@Html.ActionLink((i + 1).ToString() + " ", "Index", new { SortOrder = ViewBag.SortOrder, SortBy = ViewBag.SortBy, PageNumber = (i + 1).ToString() })</u>
 
+
+    <ul class="pagination">
+        @for (int i = 0; i < ViewBag.PageCount; i++)
+    {
+        if (i + 1 == ViewBag.PageNumber)
+        {
+            <li class="page-item active">
+                @Html.ActionLink((i + 1).ToString() + " ", "Index", new { SortOrder = ViewBag.SortOrder, SortBy = ViewBag.SortBy, PageNumber = (i + 1).ToString() })
+            </li>
     }
     else
     {
-        @Html.ActionLink((i + 1).ToString() + " ", "Index", new { SortOrder = ViewBag.SortOrder, SortBy = ViewBag.SortBy, PageNumber = (i + 1).ToString() })
-    }
+            <li class="page-item">
+                @Html.ActionLink((i + 1).ToString() + " ", "Index", new { SortOrder = ViewBag.SortOrder, SortBy = ViewBag.SortBy, PageNumber = (i + 1).ToString() })
+            </li>
 }
+}
+    </ul>

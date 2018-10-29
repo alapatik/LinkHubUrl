@@ -4,46 +4,49 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 <h2>Login</h2>
-@{ 
-    if(TempData["Msg"] != null)
+@{
+    if (TempData["Msg"] != null)
     {
-        <p>@TempData["Msg"]</p>
+        <div class="alert alert-dismissible alert-info">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            @TempData["Msg"].ToString()
+        </div>
     }
 }
 
-@using (Html.BeginForm("SignIn", "Login", FormMethod.Post)) 
+@using (Html.BeginForm("SignIn", "Login", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.UserEmail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-group" } })
+                <br/>
                 @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Password, new { htmlAttributes = new { @class = "form-group" } })
+                <br />
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="SignIn" class="btn btn-default" />
+                <input type="submit" value="SignIn" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

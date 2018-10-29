@@ -2,12 +2,12 @@ D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\BLL.dll
 D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\BLL.pdb
 D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\BOL.dll
 D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\DAL.dll
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\EntityFramework.dll
 D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\BOL.pdb
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\BOL.dll.config
 D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\DAL.pdb
+D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\EntityFramework.xml
 D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\obj\Debug\BLL.dll
 D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\obj\Debug\BLL.pdb
-D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\EntityFramework.dll
-D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\BOL.dll.config
-D:\Practice\MVC\LInkHubUI\LinkHubUI\BLL\bin\Debug\EntityFramework.xml

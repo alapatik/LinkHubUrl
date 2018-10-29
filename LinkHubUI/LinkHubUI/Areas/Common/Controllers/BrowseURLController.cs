@@ -7,9 +7,9 @@ using System.Web.Mvc;
 
 namespace LinkHubUI.Areas.Common.Controllers
 {
+    [AllowAnonymous]
     public class BrowseURLController : BaseCommonController
-    {
-       
+    {  
         // GET: Common/BrowseURL
         public ActionResult Index(string SortOrder, string SortBy, string PageNumber)
         {
